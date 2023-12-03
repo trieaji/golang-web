@@ -9,8 +9,10 @@ import (
 	"testing"
 )
 
+//query parameter adalah tempat untuk menaruh data di url
+
 func SayHello(writer http.ResponseWriter, request *http.Request) {
-	name := request.URL.Query().Get("name")
+	name := request.URL.Query().Get("name")//ini adalah query parameter "request.url.query()" dan letak datanya ada di url
 	if name == "" {
 		fmt.Fprint(writer, "Hello ae")
 	} else {

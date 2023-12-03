@@ -21,7 +21,7 @@ func SetCookie(writer http.ResponseWriter, request *http.Request) {
 
 // untuk mengambil cookie nya
 func GetCookie(writer http.ResponseWriter, request *http.Request) {
-	cookie, err := request.Cookie("X-PZN-Name")
+	cookie, err := request.Cookie("X-PZN-Name")//mengambil cookie.Name
 
 	if err != nil { //kalau error nya tidak sama dengan nil
 		fmt.Fprint(writer, "No Cookie")
