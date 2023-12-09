@@ -19,7 +19,7 @@ func RequestHeader(writer http.ResponseWriter, request *http.Request) {
 // cara menangkap header dari client, yang dikirim oleh si client
 func TestRequestHeader(t *testing.T) {
 	request := httptest.NewRequest(http.MethodPost, "http://localhost:4003/", nil)
-	request.Header.Add("Content-Type", "meliodas") //application/json -> adalah header yang kita kirim
+	request.Header.Add("Content-Type", "meliodas") //application/json -> adalah header yang kita kirim //"Content-Type" adalah key, "meliodas" adalah value
 
 	recorder := httptest.NewRecorder()
 
@@ -54,3 +54,7 @@ func TestResponseHeader(t *testing.T) {
 	//cek header response nya
 	fmt.Println(response.Header.Get("dipersembahkan-oleh"))
 }
+
+
+//response header itu dikirim dari server ke client
+//request header itu dikirim dari client ke server
